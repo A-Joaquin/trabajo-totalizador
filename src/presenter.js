@@ -1,4 +1,4 @@
-import sumar from "./sumador";
+import calcularPrecio from "./calcularPrecio";
 
 const first = document.querySelector("#cantidad-items");
 const second = document.querySelector("#precio-items");
