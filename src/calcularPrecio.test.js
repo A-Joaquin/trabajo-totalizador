@@ -27,4 +27,16 @@ describe("Calcular precio neto", () => {
   it("Calcular precio neto con impuesto en Alabama (AL)", () => {
     expect(calcularPrecio(11, 22, "AL")).toEqual(251.68);
   });
+
+  it("Calcular precio neto con impuesto en Alabama (AL)", () => {
+    expect(calcularPrecio(11, 22, "AL")).toEqual(251.68);
+  });
+
+  it("Calcular precio neto con impuesto en Alabama (AL)", () => {
+    expect(calcularPrecio(11, 22, "AL")).toEqual(251.68);
+  });
+
+  it("Calcular precio total con descuento con 1000 unidades", () => {
+    expect(calcularPrecio(1000,2)).toEqual(1940);
+  });
 });

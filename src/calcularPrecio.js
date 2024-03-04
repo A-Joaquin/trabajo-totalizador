@@ -1,8 +1,9 @@
 function calcularPrecio(cantidad,precio,estado) {
-  
+
   let impuesto=obtenerImpuesto(estado)
+  let descuento=obtenerDescuento(cantidad)
   const subtotal = cantidad * precio;
-  const total = subtotal + subtotal * impuesto;
+  const total = subtotal + subtotal * impuesto - (descuento*subtotal);
 
   return total;
 }
@@ -25,4 +26,13 @@ function obtenerImpuesto(estado) {
   return impuesto;
 }
 
-  export { calcularPrecio, obtenerImpuesto };
+function obtenerDescuento(cantidad)
+{
+  let descuento=0;
+  if (cantidad === 1000) {
+    descuento = 0.03;
+  }
+  return descuento;
+}
+
+  export { calcularPrecio, obtenerImpuesto, obtenerDescuento };
