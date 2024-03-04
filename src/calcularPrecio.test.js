@@ -20,4 +20,8 @@ describe("Calcular precio neto", () => {
   it("Calcular precio neto con impuesto en Texas (TX)", () => {
     expect(calcularPrecio(35, 7, "TX")).toEqual(260.3125);
   });
+
+  it("Calcular precio neto con impuesto en Alabama (AL)", () => {
+    expect(calcularPrecio(11, 22, "AL")).toEqual(251.68);
+  });
 });
