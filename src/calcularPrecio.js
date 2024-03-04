@@ -6,6 +6,8 @@ function calcularPrecio(cantidad,precio,estado) {
     impuesto = 0.0665
   } else if(estado === "NV") { // Impuesto del 8.00% para Nevada
     impuesto = 0.08
+  } else if(estado === "TX") { // Impuesto del 6.25% para Nevada
+    impuesto = 0.0625
   }
   const subtotal = cantidad * precio;
   const total = subtotal + subtotal * impuesto;
