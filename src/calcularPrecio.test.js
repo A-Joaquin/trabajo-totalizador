@@ -46,6 +46,9 @@ describe("Calcular precio neto", () => {
   it("Calcular precio total con descuento con 7000 unidades", () => {
     expect(calcularPrecio(7000,2)).toEqual(13020);
   });
+  it("Calcular precio total con descuento con 10000 unidades", () => {
+    expect(calcularPrecio(10000,2)).toEqual(18000);
+  });
 
 
 });

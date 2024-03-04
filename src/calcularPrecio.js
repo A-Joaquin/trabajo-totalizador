@@ -37,6 +37,8 @@ function obtenerDescuento(cantidad)
   } 
   else if (cantidad === 7000) {
     descuento = 0.07;
+  } else if (cantidad === 10000) {
+    descuento = 0.1;
   }
   return descuento;
 }
