@@ -1,4 +1,4 @@
-import { calcularPrecio, obtenerImpuesto } from "./calcularPrecio";
+import { calcularPrecio, obtenerImpuesto, obtenerDescuento } from "./calcularPrecio";
 
 const first = document.querySelector("#cantidad-items");
 const second = document.querySelector("#precio-items");
