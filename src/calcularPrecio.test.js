@@ -1,4 +1,7 @@
-import calcularPrecio from "./calcularPrecio";
+import { calcularPrecio, obtenerImpuesto } from "./calcularPrecio";
+
+// Resto del código aquí
+
 
 describe("Calcular precio neto", () => {
   it("Calcular precio neto sin impuestos", () => {
