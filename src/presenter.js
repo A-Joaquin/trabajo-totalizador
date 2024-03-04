@@ -24,7 +24,7 @@ form.addEventListener("submit", (event) => {
   divDescuento.innerHTML="<p> Descuento:" + descuento + "%: " +descuento*(precioNeto)+"</p>";
   /*mostrar impuesto de ESTADO */
   let impuesto=obtenerImpuesto(estado);
-  span.innerHTML = estado + " " + impuesto*100 + "%: " + "$"+impuesto*(precioNeto);
+  span.innerHTML = "Descuento para: " +estado + " " + impuesto*100 + "%: " + "$"+impuesto*(precioNeto);
   /*mostrar precio TOTAL */
   div.innerHTML = "<p> precio total: $" + calcularPrecio(firstNumber, secondNumber, estado) + "</p>";
 });
