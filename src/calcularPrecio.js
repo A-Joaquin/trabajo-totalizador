@@ -58,6 +58,10 @@ function obtenerImDeCateg(categoria){
     impuesto = 0.07;
     descuento = 0;
   }
+  if(categoria === "matesc"){
+    impuesto = 0;
+    descuento = 0.015;
+  }
   return {
     impuesto: impuesto,
     descuento: descuento

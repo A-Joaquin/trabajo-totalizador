@@ -62,4 +62,8 @@ describe("Calcular precio neto", () => {
   it("Calcular precio total con descuento e impuesto de 300 unidades en bebidas alcoholicas", () => {
     expect(calcularPrecio(300,5,"","bebal")).toEqual(1605);
   });
+  it("Calcular precio total con descuento e impuesto de 200 unidades en material de escritorio", () => {
+    expect(calcularPrecio(200,2,"","matesc")).toEqual(394);
+  });
+
 });
