@@ -56,20 +56,22 @@ describe("Calcular precio neto", () => {
   it("Calcular precio total con descuento e impuesto de 30000 unidades en varios", () => {
     expect(calcularPrecio(30000,2,"","var")).toEqual(51000);
   });
-  it("Calcular precio total con 100 unidades con impuesto de alimentos adicional", () => {
+  it("Calcular precio total con 100 unidades con descuento de alimentos adicional", () => {
     expect(calcularPrecio(100,1,"","alim")).toEqual(98);
   });
-  it("Calcular precio total con descuento e impuesto de 300 unidades en bebidas alcoholicas", () => {
+  it("Calcular precio total con impuesto de 300 unidades en bebidas alcoholicas", () => {
     expect(calcularPrecio(300,5,"","bebal")).toEqual(1605);
   });
-  it("Calcular precio total con descuento e impuesto de 200 unidades en material de escritorio", () => {
+  it("Calcular precio total con descuento de 200 unidades en material de escritorio", () => {
     expect(calcularPrecio(200,2,"","matesc")).toEqual(394);
   });
-  it("Calcular precio total con descuento e impuesto de 500 unidades en muebles", () => {
+  it("Calcular precio total con impuesto de 500 unidades en muebles", () => {
     expect(calcularPrecio(500,8,"","mueb")).toEqual(4120);
   });
   it("Calcular precio total con descuento e impuesto de 300 unidades en electronicos", () => {
     expect(calcularPrecio(300,3,"","elec")).toEqual(927);
   });
-
+  it("Calcular precio total con impuesto de 1000 unidades en vestimenta", () => {
+    expect(calcularPrecio(1000,17,"","vest")).toEqual(16830);
+  });
 });

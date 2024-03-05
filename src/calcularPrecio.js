@@ -51,24 +51,23 @@ function obtenerImDeCateg(categoria){
   let descuento = 0;
   let impuesto = 0;
   if(categoria === "alim"){
-    impuesto = 0;
     descuento = 0.02;
   }
   if(categoria === "bebal"){
     impuesto = 0.07;
-    descuento = 0;
   }
   if(categoria === "matesc"){
-    impuesto = 0;
     descuento = 0.015;
   }
   if(categoria === "mueb"){
     impuesto = 0.03;
-    descuento = 0;
   }
   if(categoria === "elec"){
     impuesto = 0.04;
     descuento = 0.01;
+  }
+  if(categoria === "vest"){
+    impuesto = 0.02;
   }
 
   return {
