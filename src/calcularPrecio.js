@@ -50,11 +50,11 @@ function obtenerDescuento(cantidad)
 function obtenerImDeCateg(categoria){
   let descuento = 0;
   let impuesto = 0;
-  if(categoria === "var"){
+  if(categoria === "alim"){
     impuesto = 0;
     descuento = 0.02;
   }
-  if(categoria === "alim"){
+  if(categoria === "bebal"){
     impuesto = 0.07;
     descuento = 0;
   }

@@ -53,11 +53,13 @@ describe("Calcular precio neto", () => {
     expect(calcularPrecio(30000,2)).toEqual(51000);
   });
 
-  it("Calcular precio total con descuento con 30000 unidades", () => {
-    expect(calcularPrecio(30000,2,"","var")).toEqual(49800);
+  it("Calcular precio total con descuento e impuesto de 30000 unidades en varios", () => {
+    expect(calcularPrecio(30000,2,"","var")).toEqual(51000);
   });
-
   it("Calcular precio total con 100 unidades con impuesto de alimentos adicional", () => {
-    expect(calcularPrecio(100,1,"","alim")).toEqual(107);
+    expect(calcularPrecio(100,1,"","alim")).toEqual(98);
+  });
+  it("Calcular precio total con descuento e impuesto de 300 unidades en bebidas alcoholicas", () => {
+    expect(calcularPrecio(300,5,"","bebal")).toEqual(1605);
   });
 });
