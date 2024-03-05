@@ -65,5 +65,8 @@ describe("Calcular precio neto", () => {
   it("Calcular precio total con descuento e impuesto de 200 unidades en material de escritorio", () => {
     expect(calcularPrecio(200,2,"","matesc")).toEqual(394);
   });
+  it("Calcular precio total con descuento e impuesto de 500 unidades en muebles", () => {
+    expect(calcularPrecio(500,8,"","mueb")).toEqual(4120);
+  });
 
 });

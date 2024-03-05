@@ -62,6 +62,10 @@ function obtenerImDeCateg(categoria){
     impuesto = 0;
     descuento = 0.015;
   }
+  if(categoria === "mueb"){
+    impuesto = 0.03;
+    descuento = 0;
+  }
   return {
     impuesto: impuesto,
     descuento: descuento
