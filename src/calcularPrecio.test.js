@@ -56,4 +56,8 @@ describe("Calcular precio neto", () => {
   it("Calcular precio total con descuento con 30000 unidades", () => {
     expect(calcularPrecio(30000,2,"","var")).toEqual(49800);
   });
+
+  it("Calcular precio total con 100 unidades con impuesto de alimentos adicional", () => {
+    expect(calcularPrecio(100,1,"","alim")).toEqual(107);
+  });
 });

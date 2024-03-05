@@ -54,6 +54,10 @@ function obtenerImDeCateg(categoria){
     impuesto = 0;
     descuento = 0.02;
   }
+  if(categoria === "alim"){
+    impuesto = 0.07;
+    descuento = 0;
+  }
   return {
     impuesto: impuesto,
     descuento: descuento
