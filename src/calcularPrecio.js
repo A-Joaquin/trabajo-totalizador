@@ -1,9 +1,10 @@
-function calcularPrecio(cantidad,precio,estado) {
+function calcularPrecio(cantidad,precio,estado,categoria) {
 
   let impuesto=obtenerImpuesto(estado)
   let descuento=obtenerDescuento(cantidad)
+  let imdecategoria=obtenerImDeCateg(categoria)
   const subtotal = cantidad * precio;
-  const total = subtotal + subtotal * impuesto - (descuento*subtotal);
+  const total = subtotal + subtotal * impuesto - (descuento*subtotal) + subtotal * imdecategoria.impuesto - (subtotal * imdecategoria.descuento);
 
   return total;
 }
@@ -49,6 +50,14 @@ function obtenerDescuento(cantidad)
 function obtenerImDeCateg(categoria){
   let descuento = 0;
   let impuesto = 0;
+  if(categoria === "var"){
+    impuesto = 0;
+    descuento = 0.02;
+  }
+  return {
+    impuesto: impuesto,
+    descuento: descuento
+  }
 }
 
   export { calcularPrecio, obtenerImpuesto, obtenerDescuento };
