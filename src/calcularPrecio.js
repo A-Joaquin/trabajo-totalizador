@@ -43,8 +43,12 @@ function obtenerDescuento(cantidad)
   else if (cantidad === 30000) {
     descuento = 0.15;
   }
-
   return descuento;
+}
+
+function obtenerImDeCateg(categoria){
+  let descuento = 0;
+  let impuesto = 0;
 }
 
   export { calcularPrecio, obtenerImpuesto, obtenerDescuento };

@@ -5,6 +5,7 @@ const second = document.querySelector("#precio-items");
 const form = document.querySelector("#totalizador-form");
 const div = document.querySelector("#resultado-div");
 const estadoInput = document.querySelector("#estados");
+const categInput = document.querySelector("#categorias")
 const span = document.querySelector("#porcentaje-impuesto");
 const div2 = document.querySelector("#resultado-precioNeto");
 const divDescuento=document.querySelector("#descuento-cantidad");
@@ -15,6 +16,7 @@ form.addEventListener("submit", (event) => {
   const firstNumber = Number.parseInt(first.value);
   const secondNumber = Number.parseFloat(second.value);
   const estado = estadoInput.value;
+  const categoria = categInput.value;
   
   let precioNeto=firstNumber*secondNumber;
   /*mostrar precio neto */
