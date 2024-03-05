@@ -76,4 +76,4 @@ function obtenerImDeCateg(categoria){
   }
 }
 
-  export { calcularPrecio, obtenerImpuesto, obtenerDescuento };
+  export { calcularPrecio, obtenerImpuesto, obtenerDescuento, obtenerImDeCateg };
