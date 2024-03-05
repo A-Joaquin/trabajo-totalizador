@@ -66,6 +66,11 @@ function obtenerImDeCateg(categoria){
     impuesto = 0.03;
     descuento = 0;
   }
+  if(categoria === "elec"){
+    impuesto = 0.04;
+    descuento = 0.01;
+  }
+
   return {
     impuesto: impuesto,
     descuento: descuento

@@ -68,5 +68,8 @@ describe("Calcular precio neto", () => {
   it("Calcular precio total con descuento e impuesto de 500 unidades en muebles", () => {
     expect(calcularPrecio(500,8,"","mueb")).toEqual(4120);
   });
+  it("Calcular precio total con descuento e impuesto de 300 unidades en electronicos", () => {
+    expect(calcularPrecio(300,3,"","elec")).toEqual(927);
+  });
 
 });
