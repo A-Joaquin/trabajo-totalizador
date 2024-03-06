@@ -5,7 +5,7 @@ function calcularPrecio(cantidad,precio,estado,categoria,peso) {
   let imdecategoria=obtenerImDeCateg(categoria)
   let costenvio=obtenerCosteEnvio(peso)
   const subtotal = cantidad * precio;
-  const total = subtotal + subtotal * impuesto - (descuento*subtotal) + subtotal * imdecategoria.impuesto - (subtotal * imdecategoria.descuento) + cantidad * costenvio;
+  const total = subtotal + subtotal * impuesto - (descuento*subtotal) + subtotal * imdecategoria.impuesto - (subtotal * imdecategoria.descuento) + (cantidad * costenvio);
 
   return total;
 }
@@ -81,6 +81,9 @@ function obtenerCosteEnvio(Peso){
   let costo = 0;
   if(Peso >= 11 && Peso <=20){
     costo = 3.5
+  }
+  if(Peso >= 21 && Peso <=40){
+    costo = 5
   }
   return costo;
 }
