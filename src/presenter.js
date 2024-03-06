@@ -1,4 +1,4 @@
-import { calcularPrecio, obtenerImpuesto, obtenerDescuento, obtenerImDeCateg } from "./calcularPrecio";
+import { calcularPrecio, obtenerImpuesto, obtenerDescuento, obtenerImDeCateg, obtenerCosteEnvio } from "./calcularPrecio.js";
 
 const first = document.querySelector("#cantidad-items");
 const second = document.querySelector("#precio-items");
@@ -37,5 +37,5 @@ form.addEventListener("submit", (event) => {
   let impuesto=obtenerImpuesto(estado);
   span.innerHTML = "Impuesto para: " +estado + " " + impuesto*100 + "%: " + "$"+impuesto*(precioNeto);
   /*mostrar precio TOTAL */
-  div.innerHTML = "<p> precio total: $" + calcularPrecio(firstNumber, secondNumber, estado) + "</p>";
+  div.innerHTML = "<p> precio total: $" + calcularPrecio(firstNumber, secondNumber, estado, categoria) + "</p>";
 });

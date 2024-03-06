@@ -74,4 +74,8 @@ describe("Calcular precio neto", () => {
   it("Calcular precio total con impuesto de 1000 unidades en vestimenta", () => {
     expect(calcularPrecio(1000,17,"","vest")).toEqual(16830);
   });
+
+  it("Calcular precio total de acuerdo al peso volumetrico 11-20", () => {
+    expect(calcularPrecio(30,4,"","",11)).toEqual(225);
+  });
 });
