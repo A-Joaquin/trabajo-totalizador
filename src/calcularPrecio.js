@@ -107,6 +107,9 @@ function descuentoTipoCli(tipoCliente){
   if(tipoCliente === "rec"){
     descuento = 0.005
   }
+  if(tipoCliente === "antig"){
+    descuento = 0.01
+  }
   return descuento;
 }
 
