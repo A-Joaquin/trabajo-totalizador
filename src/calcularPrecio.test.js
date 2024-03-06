@@ -98,6 +98,8 @@ describe("Calcular precio neto", () => {
   it("Calcular precio total de acuerdo al descuendo de tipo de cliente: NORMAL", () => {
     expect(calcularPrecio(100,1,"","",1,"nor")).toEqual(100);
   });
+  it("Calcular precio total de acuerdo al descuendo de tipo de cliente: Recurrente", () => {
+    expect(calcularPrecio(350,3,"","",1,"rec")).toEqual(1044.75);
+  });
 
-  
 });

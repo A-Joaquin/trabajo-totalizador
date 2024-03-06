@@ -104,6 +104,9 @@ function obtenerCosteEnvio(Peso){
 
 function descuentoTipoCli(tipoCliente){
   let descuento = 0;
+  if(tipoCliente === "rec"){
+    descuento = 0.005
+  }
   return descuento;
 }
 
