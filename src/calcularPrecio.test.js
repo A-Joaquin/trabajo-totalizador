@@ -85,4 +85,8 @@ describe("Calcular precio neto", () => {
     expect(calcularPrecio(500,7,"","",42)).toEqual(6500);
   });
 
+  it("Calcular precio total de acuerdo al peso volumetrico 81 - 100", () => {
+    expect(calcularPrecio(5000,6,"","",81)).toEqual(62500);
+  });
+
 });
