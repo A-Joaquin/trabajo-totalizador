@@ -5,7 +5,8 @@ const second = document.querySelector("#precio-items");
 const form = document.querySelector("#totalizador-form");
 const div = document.querySelector("#resultado-div");
 const estadoInput = document.querySelector("#estados");
-const categInput = document.querySelector("#categorias")
+const categInput = document.querySelector("#categorias");
+const tclienteInput = document.querySelector("#tclientes");
 const span = document.querySelector("#porcentaje-impuesto");
 const div2 = document.querySelector("#resultado-precioNeto");
 const divDescuento=document.querySelector("#descuento-cantidad");
@@ -23,6 +24,7 @@ form.addEventListener("submit", (event) => {
   const estado = estadoInput.value;
   const categoria = categInput.value;
   const pesoItems=peso.value;
+  const tipocliente = tclienteInput.value;
   
   let precioNeto=firstNumber*secondNumber;
   /*mostrar precio neto */
@@ -43,6 +45,9 @@ form.addEventListener("submit", (event) => {
   /*mostrar impuesto de ESTADO */
   let impuesto=obtenerImpuesto(estado);
   span.innerHTML = "Impuesto para: " +estado + " " + (impuesto*100).toFixed(0) + "%: " + "$"+(impuesto*(precioNeto)).toFixed(3);
+  /*mostrar impuesto de ESTADO */
+  let desc_tipocliente=obtenerDescuentotCliente(tipocliente);
+  span.innerHTML = "Descuento por: " +tipocliente + " " + (desc_tipocliente*100).toFixed(0) + "%: " + "$"+(desc_tipocliente*(precioNeto)).toFixed(3);
   /*mostrar precio TOTAL */
   div.innerHTML = "<p> precio total: $" + calcularPrecio(firstNumber, secondNumber, estado, categoria,pesoItems) + "</p>";
 });
