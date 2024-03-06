@@ -1,4 +1,4 @@
-import { calcularPrecio, obtenerImpuesto, obtenerDescuento, obtenerImDeCateg, obtenerCosteEnvio, descuentoTipoCli } from "./calcularPrecio.js";
+import { calcularPrecio, obtenerImpuesto, obtenerDescuento, obtenerImDeCateg, obtenerCosteEnvio, descuentoTipoCli, beneficioCli_porPrecioNeto_Cat_tipoCli } from "./calcularPrecio.js";
 
 const first = document.querySelector("#cantidad-items");
 const second = document.querySelector("#precio-items");
@@ -17,7 +17,7 @@ const peso = document.querySelector("#peso-items");
 const divCostoEnvio=document.querySelector("#costo-envio");
 
 const divDescuentoCli=document.querySelector("#descuento-cliente");
-
+const divDescuentoCli2=document.querySelector("#descuento-cliente2");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -46,6 +46,9 @@ form.addEventListener("submit", (event) => {
   /*Descuento de cliente */
   let descuentoCliente=descuentoTipoCli(tipocliente);
   divDescuentoCli.innerHTML="<p> Descuento por tipo de cliente "+ (descuentoCliente*100).toFixed(0)+"%: $"+ (descuentoCliente*precioNeto).toFixed(2) +"";
+  /*Descuento de cliente BENEFICIO */
+  let descuentoCliente2=beneficioCli_porPrecioNeto_Cat_tipoCli(tipocliente,precioNeto,categoria);
+  divDescuentoCli2.innerHTML="<p> Descuento por tipo cliente, precio Neto y categoria: $"+ descuentoCliente2 +"";
   /*descuento por categoria */
   divDescuentoCat.innerHTML="<p> Descuento por categoria:" + (descuento_cat*100).toFixed(0) + "%: $" + (precioNeto*descuento_cat).toFixed(2)+"</p>";
   /*mostrar impuesto de ESTADO */

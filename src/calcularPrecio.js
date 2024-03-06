@@ -6,7 +6,8 @@ function calcularPrecio(cantidad,precio,estado,categoria,peso,tipoCliente) {
   let costenvio=obtenerCosteEnvio(peso)
   let descuentoCliente=descuentoTipoCli(tipoCliente)
   const subtotal = cantidad * precio;
-  const total = subtotal + subtotal * impuesto - (descuento*subtotal) + subtotal * imdecategoria.impuesto - (subtotal * imdecategoria.descuento) + (cantidad * costenvio) - (descuentoCliente*subtotal);
+  let DescuentoCliente2=beneficioCli_porPrecioNeto_Cat_tipoCli(tipoCliente,subtotal,categoria);
+  const total = subtotal + subtotal * impuesto - (descuento*subtotal) + subtotal * imdecategoria.impuesto - (subtotal * imdecategoria.descuento) + (cantidad * costenvio) - (descuentoCliente*subtotal)-DescuentoCliente2;
 
   return total;
 }
@@ -116,4 +117,13 @@ function descuentoTipoCli(tipoCliente){
   return descuento;
 }
 
-  export { calcularPrecio, obtenerImpuesto, obtenerDescuento, obtenerImDeCateg, obtenerCosteEnvio, descuentoTipoCli };
+
+function beneficioCli_porPrecioNeto_Cat_tipoCli(tipoCliente,precioNetoOrd,cateProduc){
+  let beneficio = 0;
+  if(tipoCliente === "rec" && precioNetoOrd>3000 && cateProduc=="alim"){
+    beneficio =100;
+  }
+  return beneficio;
+}
+
+  export { calcularPrecio, obtenerImpuesto, obtenerDescuento, obtenerImDeCateg, obtenerCosteEnvio, descuentoTipoCli,beneficioCli_porPrecioNeto_Cat_tipoCli };
