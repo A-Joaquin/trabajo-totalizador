@@ -101,9 +101,11 @@ describe("Calcular precio neto", () => {
   it("Calcular precio total de acuerdo al descuendo de tipo de cliente: Recurrente", () => {
     expect(calcularPrecio(350,3,"","",1,"rec")).toEqual(1044.75);
   });
-
-  it("Calcular precio total de acuerdo al descuendo de tipo de cliente: Recurrente", () => {
+  it("Calcular precio total de acuerdo al descuendo de tipo de cliente: Antiguo Recurrente", () => {
     expect(calcularPrecio(400,2,"","",1,"antig")).toEqual(792);
+  });
+  it("Calcular precio total de acuerdo al descuendo de tipo de cliente: Especial", () => {
+    expect(calcularPrecio(777,7,"","",1,"esp")).toEqual(5357.415);
   });
 
 });
