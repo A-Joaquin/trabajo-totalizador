@@ -1,4 +1,4 @@
-import { calcularPrecio, obtenerImpuesto, obtenerDescuento, obtenerImDeCateg, obtenerCosteEnvio } from "./calcularPrecio.js";
+import { calcularPrecio, obtenerImpuesto, obtenerDescuento, obtenerImDeCateg, obtenerCosteEnvio, descuentoTipoCli } from "./calcularPrecio.js";
 
 const first = document.querySelector("#cantidad-items");
 const second = document.querySelector("#precio-items");
@@ -15,6 +15,9 @@ const divDescuentoCat=document.querySelector("#descuento-categoria");
 
 const peso = document.querySelector("#peso-items");
 const divCostoEnvio=document.querySelector("#costo-envio");
+
+const divDescuentoCli=document.querySelector("#descuento-cliente");
+
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -40,14 +43,14 @@ form.addEventListener("submit", (event) => {
   /*Costo de envio */
   let costoEnvio=obtenerCosteEnvio(pesoItems)
   divCostoEnvio.innerHTML="<p> El costo de envio es: $"+ (costoEnvio*firstNumber).toFixed(2) +"";
+  /*Descuento de cliente */
+  let descuentoCliente=descuentoTipoCli(tipocliente);
+  divDescuentoCli.innerHTML="<p> Descuento por tipo de cliente "+ (descuentoCliente*100).toFixed(0)+"%: $"+ (descuentoCliente*precioNeto).toFixed(2) +"";
   /*descuento por categoria */
   divDescuentoCat.innerHTML="<p> Descuento por categoria:" + (descuento_cat*100).toFixed(0) + "%: $" + (precioNeto*descuento_cat).toFixed(2)+"</p>";
   /*mostrar impuesto de ESTADO */
   let impuesto=obtenerImpuesto(estado);
   span.innerHTML = "Impuesto para: " +estado + " " + (impuesto*100).toFixed(0) + "%: " + "$"+(impuesto*(precioNeto)).toFixed(3);
-  /*mostrar impuesto de ESTADO */
-  let desc_tipocliente=obtenerDescuentotCliente(tipocliente);
-  span.innerHTML = "Descuento por: " +tipocliente + " " + (desc_tipocliente*100).toFixed(0) + "%: " + "$"+(desc_tipocliente*(precioNeto)).toFixed(3);
   /*mostrar precio TOTAL */
-  div.innerHTML = "<p> precio total: $" + calcularPrecio(firstNumber, secondNumber, estado, categoria,pesoItems) + "</p>";
+  div.innerHTML = "<p> precio total: $" + calcularPrecio(firstNumber, secondNumber, estado, categoria,pesoItems,tipocliente) + "</p>";
 });

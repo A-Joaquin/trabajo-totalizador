@@ -1,11 +1,12 @@
-function calcularPrecio(cantidad,precio,estado,categoria,peso) {
+function calcularPrecio(cantidad,precio,estado,categoria,peso,tipoCliente) {
 
   let impuesto=obtenerImpuesto(estado)
   let descuento=obtenerDescuento(cantidad)
   let imdecategoria=obtenerImDeCateg(categoria)
   let costenvio=obtenerCosteEnvio(peso)
+  let descuentoCliente=descuentoTipoCli(tipoCliente)
   const subtotal = cantidad * precio;
-  const total = subtotal + subtotal * impuesto - (descuento*subtotal) + subtotal * imdecategoria.impuesto - (subtotal * imdecategoria.descuento) + (cantidad * costenvio);
+  const total = subtotal + subtotal * impuesto - (descuento*subtotal) + subtotal * imdecategoria.impuesto - (subtotal * imdecategoria.descuento) + (cantidad * costenvio) - (descuentoCliente*subtotal);
 
   return total;
 }
@@ -100,4 +101,10 @@ function obtenerCosteEnvio(Peso){
   return costo;
 }
 
-  export { calcularPrecio, obtenerImpuesto, obtenerDescuento, obtenerImDeCateg, obtenerCosteEnvio };
+
+function descuentoTipoCli(tipoCliente){
+  let descuento = 0;
+  return descuento;
+}
+
+  export { calcularPrecio, obtenerImpuesto, obtenerDescuento, obtenerImDeCateg, obtenerCosteEnvio, descuentoTipoCli };
