@@ -85,6 +85,9 @@ function obtenerCosteEnvio(Peso){
   if(Peso >= 21 && Peso <=40){
     costo = 5
   }
+  if(Peso >= 41 && Peso <=80){
+    costo = 6
+  }
   return costo;
 }
 

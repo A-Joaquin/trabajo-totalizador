@@ -36,7 +36,7 @@ form.addEventListener("submit", (event) => {
   let descuento_cat=Number.parseFloat(impuesto_descuentoCAT.descuento); 
   divImpuestoCat.innerHTML="<p> Impuesto por categoria: " + (impuesto_cat*100).toFixed(0) + "%: $" +((precioNeto)*impuesto_cat).toFixed(2)+"</p> ";
   /*Costo de envio */
-  costoEnvio=obtenerCosteEnvio(pesoItems)
+  let costoEnvio=obtenerCosteEnvio(pesoItems)
   divCostoEnvio.innerHTML="<p> El costo de envio es: $"+ (costoEnvio*firstNumber).toFixed(2) +"";
   /*descuento por categoria */
   divDescuentoCat.innerHTML="<p> Descuento por categoria:" + (descuento_cat*100).toFixed(0) + "%: $" + (precioNeto*descuento_cat).toFixed(2)+"</p>";
