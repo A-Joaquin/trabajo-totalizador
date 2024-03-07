@@ -22,11 +22,26 @@ const divDescuentoCli2=document.querySelector("#descuento-cliente2");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseFloat(second.value);
+
+    // Validar que los campos no estén vacíos y no sean negativos
+    if (!first.value || !second.value || !peso.value) {
+      alert("Por favor, completa todos los campos.");
+      return;
+    }
+  
+    const firstNumber = Number.parseInt(first.value);
+    const secondNumber = Number.parseFloat(second.value);
+    const pesoItems = parseFloat(peso.value);
+  
+    // Validar que los valores no sean negativos
+    if (firstNumber < 0 || secondNumber < 0 || pesoItems < 0) {
+      alert("Por favor, ingresa valores no negativos.");
+      return;
+    }
+  
+
   const estado = estadoInput.value;
   const categoria = categInput.value;
-  const pesoItems=peso.value;
   const tipocliente = tclienteInput.value;
   
   let precioNeto=firstNumber*secondNumber;
@@ -50,10 +65,10 @@ form.addEventListener("submit", (event) => {
   let descuentoCliente2=beneficioCli_porPrecioNeto_Cat_tipoCli(tipocliente,precioNeto,categoria);
   divDescuentoCli2.innerHTML="<p> Descuento por tipo cliente, precio Neto y categoria: $"+ descuentoCliente2 +"";
   /*descuento por categoria */
-  divDescuentoCat.innerHTML="<p> Descuento por categoria:" + (descuento_cat*100).toFixed(0) + "%: $" + (precioNeto*descuento_cat).toFixed(2)+"</p>";
+  divDescuentoCat.innerHTML="<p> Descuento por categoria: <p>" + (descuento_cat*100).toFixed(0) + "%: $" + (precioNeto*descuento_cat).toFixed(2)+"</p>";
   /*mostrar impuesto de ESTADO */
   let impuesto=obtenerImpuesto(estado);
-  span.innerHTML = "Impuesto para: " +estado + " " + (impuesto*100).toFixed(0) + "%: " + "$"+(impuesto*(precioNeto)).toFixed(3);
+  span.innerHTML = "Impuesto para: " +estado + " " + (impuesto*100).toFixed(0) + "%: " + "$"+(impuesto*(precioNeto)).toFixed(2);
   /*mostrar precio TOTAL */
-  div.innerHTML = "<p> precio total: $" + calcularPrecio(firstNumber, secondNumber, estado, categoria,pesoItems,tipocliente) + "</p>";
+  div.innerHTML = "<p> precio total: $" + (calcularPrecio(firstNumber, secondNumber, estado, categoria,pesoItems,tipocliente)).toFixed(2) + "</p>";
 });

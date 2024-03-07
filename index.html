@@ -1,64 +1,82 @@
-<html>
-  <head>
-    <title>TOTALIZADOR</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOTALIZADOR</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>TOTALIZADOR DE VENTAS</h1>
+  <form id="totalizador-form">
+    <label for="cantidad-items">Cantidad de Items:</label>
+    <input type="number" id="cantidad-items" />
+    <label for="precio-items">Precion de Items:</label>
+    <input type="number" id="precio-items" />
+    <label for="peso-items">Peso de Items:</label>
+    <input type="number" id="peso-items" />
 
-  </head>
-  <body>
-    <h1>Totalizador</h1>
-    <form id="totalizador-form">
-      <label for="cantidad-items">Cantidad de Items:</label>
-      <input type="number" id="cantidad-items" />
-      <label for="precio-items">Precion de Items:</label>
-      <input type="number" id="precio-items" />
-      <label for="peso-items">Peso de Items:</label>
-      <input type="number" id="peso-items" />
-      <input type="submit" value="Totalizar" id="calcular-button" />
 
-      <br><label for="estados">Estados: </label>
-      <select id="estados">
-        <option value = "CA">CA</option>
-        <option value = "UT">UT</option>
-        <option value = "NV">NV</option>
-        <option value = "TX">TX</option>
-        <option value = "AL">AL</option>
-      </select><br>
-      
-      <br><label for="categorias">Categorias: </label>
-      <select id="categorias">
-        <option value = "var">Varios</option>
-        <option value = "alim">Alimentos</option>
-        <option value = "bebal">Bebidas alcohólicas</option>
-        <option value = "matesc">Material de escritorio</option>
-        <option value = "mueb">Muebles</option>
-        <option value = "elec">Electrónicos</option>
-        <option value = "vest">Vestimenta</option>
-      </select><br>
+    <br><label for="estados">Estados: </label>
+    <select id="estados">
+      <option value="CA">CA</option>
+      <option value="UT">UT</option>
+      <option value="NV">NV</option>
+      <option value="TX">TX</option>
+      <option value="AL">AL</option>
+    </select><br>
+    
+    <br><label for="categorias">Categorias: </label>
+    <select id="categorias">
+      <option value="var">Varios</option>
+      <option value="alim">Alimentos</option>
+      <option value="bebal">Bebidas alcohólicas</option>
+      <option value="matesc">Material de escritorio</option>
+      <option value="mueb">Muebles</option>
+      <option value="elec">Electrónicos</option>
+      <option value="vest">Vestimenta</option>
+    </select><br>
 
-      <br><label for="tclientes">Tipo de cliente: </label>
-      <select id="tclientes">
-        <option value = "nor">Normal</option>
-        <option value = "rec">Recurrente</option>
-        <option value = "antig">Antiguo Recurrente</option>
-        <option value = "esp">Especial</option>
-      </select><br>
-    </form>
+    <br><label for="tclientes">Tipo de cliente: </label>
+    <select id="tclientes">
+      <option value="nor">Normal</option>
+      <option value="rec">Recurrente</option>
+      <option value="antig">Antiguo Recurrente</option>
+      <option value="esp">Especial</option>
+    </select><br>
 
-    <div id="resultado-precioNeto"></div>
+    <input type="submit" value="Totalizar" id="calcular-button" />
+  </form>
 
-    <div id="descuento-cantidad"></div>
+  <div id="divResultados" class="resultados-container">
+    <div class="resultado-div" id="resultado-precioNeto"></div>
+    <div class="resultado-separator"></div>
 
-    <div id="impuesto-categoria"></div>
-    <div id="descuento-categoria"></div>
+    <div class="resultado-div" id="descuento-cantidad"></div>
+    <div class="resultado-separator"></div>
+
+    <div class="resultado-div" id="impuesto-categoria"></div>
+    <div class="resultado-separator"></div>
+
+    <div class="resultado-div" id="descuento-categoria"></div>
+    <div class="resultado-separator"></div>
  
-    <div id="costo-envio"></div>
+    <div class="resultado-div" id="costo-envio"></div>
+    <div class="resultado-separator"></div>
 
-    <div id="descuento-cliente"></div>
-    <div id="descuento-cliente2"></div>
+    <div class="resultado-div" id="descuento-cliente"></div>
+    <div class="resultado-separator"></div>
 
-    <span id="id-descuento"></span>
-    <span id="porcentaje-impuesto"></span>
-    <div id="resultado-div"></div>
+    <div class="resultado-div" id="descuento-cliente2"></div>
+    <div class="resultado-separator"></div>
 
-    <script type="module" src="./src/presenter.js"></script>
-  </body>
+
+    <span class="resultado-span" id="porcentaje-impuesto"></span>
+    <div class="resultado-separator"></div>
+
+    <div class="resultado-div" id="resultado-div"></div>
+  </div>
+
+  <script type="module" src="./src/presenter.js"></script>
+</body>
 </html>
