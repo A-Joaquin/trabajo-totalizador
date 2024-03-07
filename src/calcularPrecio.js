@@ -1,15 +1,19 @@
 function calcularPrecio(cantidad,precio,estado,categoria,peso,tipoCliente) {
-
-  let impuesto=obtenerImpuesto(estado)
-  let descuento=obtenerDescuento(cantidad)
-  let imdecategoria=obtenerImDeCateg(categoria)
-  let costenvio=obtenerCosteEnvio(peso)
-  let descuentoCliente=descuentoTipoCli(tipoCliente)
-  const subtotal = cantidad * precio;
-  let DescuentoCliente2=beneficioCli_porPrecioNeto_Cat_tipoCli(tipoCliente,subtotal,categoria);
-  const total = subtotal + subtotal * impuesto - (descuento*subtotal) + subtotal * imdecategoria.impuesto - (subtotal * imdecategoria.descuento) + (cantidad * costenvio) - (descuentoCliente*subtotal)-DescuentoCliente2;
+  if (cantidad < 0 || precio < 0 || peso < 0) {
+    throw new Error("La cantidad, el precio y el peso deben ser valores no negativos.");
+  }
+  else{
+    let impuesto=obtenerImpuesto(estado)
+    let descuento=obtenerDescuento(cantidad)
+    let imdecategoria=obtenerImDeCateg(categoria)
+    let costenvio=obtenerCosteEnvio(peso)
+    let descuentoCliente=descuentoTipoCli(tipoCliente)
+    const subtotal = cantidad * precio;
+    let DescuentoCliente2=beneficioCli_porPrecioNeto_Cat_tipoCli(tipoCliente,subtotal,categoria);
+    const total = subtotal + subtotal * impuesto - (descuento*subtotal) + subtotal * imdecategoria.impuesto - (subtotal * imdecategoria.descuento) + (cantidad * costenvio) - (descuentoCliente*subtotal)-DescuentoCliente2;
 
   return total;
+  }
 }
 
 function obtenerImpuesto(estado) {
