@@ -121,7 +121,10 @@ function descuentoTipoCli(tipoCliente){
 function beneficioCli_porPrecioNeto_Cat_tipoCli(tipoCliente,precioNetoOrd,cateProduc){
   let beneficio = 0;
   if(tipoCliente === "rec" && precioNetoOrd>3000 && cateProduc=="alim"){
-    beneficio =100;
+    beneficio = 100;
+  }
+  if(tipoCliente === "esp" && precioNetoOrd>7000 && cateProduc=="elec"){
+    beneficio = 200;
   }
   return beneficio;
 }

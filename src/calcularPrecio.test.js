@@ -108,9 +108,10 @@ describe("Calcular precio neto", () => {
     expect(calcularPrecio(777,7,"","",1,"esp")).toEqual(5357.415);
   });
 
-
   it("Calcular precio total de acuerdo al descuento del tipo de cliente: recurrente precioNeto>3000 y categoria: alimentos", () => {
     expect(calcularPrecio(1000,5,"","alim",1,"rec")).toEqual(4625);
   });
-
+  it("Calcular precio total de acuerdo al descuento del tipo de cliente: especial precioNeto>7000 y categoria: Electronicos", () => {
+    expect(calcularPrecio(740,15,"","elec",1,"esp")).toEqual(11066.5);
+  });
 });
